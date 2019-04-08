@@ -1,25 +1,43 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import UserInput from './components/userinput';
+import TodoList from './components/todolist';
+
 import './App.css';
 
+
+
 class App extends Component {
+  state = {
+    dataSource: [
+      {
+        id: 0,
+        content: 'Get up',
+        status: 'done'
+      },
+      {
+        id: 1,
+        content: 'Wash',
+        status: 'done'
+      },
+      {
+        id: 2,
+        content: 'Go for work',
+        status: 'todo'
+      }
+    ],
+    inputValue: ''
+  }
+  
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+
+        <h1>
+          TODO LIST
+        </h1>
+        <UserInput></UserInput>
+        <TodoList dataSource={this.state.dataSource} ></TodoList>
+
       </div>
     );
   }

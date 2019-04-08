@@ -1,0 +1,18 @@
+.close{
+    color: red;
+    margin-left: 2rem;
+}
+
+.ToDoItem{
+    margin-bottom: 1rem;
+    color:blue;
+    font-size:1.6rem
+}
+
+.ToDoItem-done{
+    color: gray
+}
+
+.ToDoItem-done .content{
+    text-decoration: line-through
+}
