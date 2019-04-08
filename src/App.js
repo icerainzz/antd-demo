@@ -12,22 +12,41 @@ class App extends Component {
       {
         id: 0,
         content: 'Get up',
-        status: 'done'
+        status: 'done',
+        index:0
       },
       {
         id: 1,
         content: 'Wash',
-        status: 'done'
+        status: 'done',
+        index:1
       },
       {
         id: 2,
         content: 'Go for work',
-        status: 'todo'
+        status: 'todo',
+        index: 2
       }
     ],
-    inputValue: ''
+    inputValue: '',
+    updateItemStatus: (index) => {
+      const dataSource = [...this.state.dataSource]
+      dataSource[index].status = dataSource[index].status === 'done' ? 'todo' : 'done'
+      this.setState({
+        dataSource
+      })
+    },
+    delateItem: (index) => {
+      const dataSource = [...this.state.dataSource]
+      dataSource.splice(index,1)
+      this.setState({
+        dataSource
+      })
+    }
   }
-  
+
+
+
   render() {
     return (
       <div className="App">
@@ -36,7 +55,7 @@ class App extends Component {
           TODO LIST
         </h1>
         <UserInput></UserInput>
-        <TodoList dataSource={this.state.dataSource} ></TodoList>
+        <TodoList dataSource={this.state.dataSource} updateItemStatus={this.state.updateItemStatus} delateItem={this.state.delateItem}   ></TodoList>
 
       </div>
     );

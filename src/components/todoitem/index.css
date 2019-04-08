@@ -1,12 +1,16 @@
 .close{
     color: red;
     margin-left: 2rem;
+    cursor: pointer;
+    user-select: none;
 }
 
 .ToDoItem{
     margin-bottom: 1rem;
     color:blue;
-    font-size:1.6rem
+    font-size:1.6rem;
+    cursor: pointer;
+    user-select: none;
 }
 
 .ToDoItem-done{
