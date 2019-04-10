@@ -10,8 +10,6 @@ class TodoItem extends Component {
     delateItem = () => {
         this.props.delateItem(this.props.index)
     }
-
-
     render() {
         return (
             <li className={'ToDoItem' + (this.props.item.status === 'done' ? ' ToDoItem-done' : '')}>

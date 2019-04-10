@@ -6,8 +6,6 @@ import TodoItem from './../todoitem';
 
 class TodoList extends Component {
 
-
-
     render() {
         return (
             <div>
